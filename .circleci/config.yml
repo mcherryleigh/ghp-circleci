@@ -5,7 +5,7 @@ jobs:
       only:
         - master
     docker:
-      - image: debian:stretch
+      - image: docker:stable-git
     steps:
       - checkout
       - run:

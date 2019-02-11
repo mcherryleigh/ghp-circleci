@@ -6,7 +6,6 @@ set -e
 
 # show where we are on the machine
 pwd
-git config remote.origin.url
 
 remote=$(git config remote.origin.url)
 
