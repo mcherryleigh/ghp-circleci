@@ -13,5 +13,4 @@ jobs:
           command: echo Hello, world.
       - run:
           name: Deploy Site
-          commands:
-            - ./scripts/deploy-ghpages.sh build dist
+          command: ./scripts/deploy-ghpages.sh build dist
