@@ -1,13 +1,17 @@
 version: 2
 jobs:
   build:
+    branches:
+      ignore:
+        - gh-pages
     docker:
       - image: debian:stretch
     steps:
       - checkout
       - run:
-          name: Greeting
+          name: Build Site
           command: echo Hello, world.
       - run:
-          name: Print the Current Time
-          command: date
+        branch: master
+        commands:
+          - ./scripts/deploy-ghpages.sh build dist
