@@ -9,9 +9,9 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Build Site
-        command: echo Hello, world.
+          name: Build Site
+          command: echo Hello, world.
       - run:
-        name: Deploy Site
-        commands:
-          - ./scripts/deploy-ghpages.sh build dist
+          name: Deploy Site
+          commands:
+            - ./scripts/deploy-ghpages.sh build dist
