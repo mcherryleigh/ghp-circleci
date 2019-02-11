@@ -13,4 +13,4 @@ jobs:
           command: echo Hello, world.
       - run:
           name: Deploy Site
-          command: ./.circleci/deploy_gh_pages.sh dist
+          command: sh ./.circleci/deploy_gh_pages.sh dist
