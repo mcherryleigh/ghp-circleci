@@ -2,16 +2,16 @@ version: 2
 jobs:
   build:
     branches:
-      ignore:
-        - gh-pages
+      only:
+        - master
     docker:
       - image: debian:stretch
     steps:
       - checkout
       - run:
-          name: Build Site
-          command: echo Hello, world.
+        name: Build Site
+        command: echo Hello, world.
       - run:
-        branch: master
+        name: Deploy Site
         commands:
           - ./scripts/deploy-ghpages.sh build dist
