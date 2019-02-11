@@ -1,13 +1,16 @@
 version: 2
 jobs:
   build:
+    branches:
+      only:
+        - master
     docker:
-      - image: debian:stretch
+      - image: docker:stable-git
     steps:
       - checkout
       - run:
-          name: Greeting
+          name: Build Site
           command: echo Hello, world.
       - run:
-          name: Print the Current Time
-          command: date
+          name: Deploy Site
+          command: sh ./.circleci/deploy_gh_pages.sh dist
